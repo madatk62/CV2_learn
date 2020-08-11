@@ -1,0 +1,7 @@
+venv
+.idea
+./src/user/__pycache__/
+./src/src/__pycache__/
+*__pycache__/
+__pycache__/
+*.py[cod]
