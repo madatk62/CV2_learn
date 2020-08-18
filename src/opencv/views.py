@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 # Create your views here.
 from .models import Image
 from .serializer import ImageSerializer
-
+from .module import ImageModule
 
 class ImageViews(APIView):
 
@@ -21,5 +21,7 @@ class ImageViews(APIView):
         serializer = ImageSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
+            path = serializer.data['src']
+            img = ImageModule(path)
 
         return Response({}, status=status.HTTP_200_OK)
