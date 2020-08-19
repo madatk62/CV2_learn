@@ -8,3 +8,6 @@ class ImageSerializer(serializers.ModelSerializer):
 
         model = Image
         fields = ['name', 'src']
+
+# class ImageResultSerializer(serializers.ModelSerializer):
+#     imageResult = ser

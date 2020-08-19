@@ -23,5 +23,6 @@ class ImageViews(APIView):
             serializer.save()
             path = serializer.data['src']
             img = ImageModule(path)
-
-        return Response({}, status=status.HTTP_200_OK)
+            if img['success'] == False:
+                pass
+        return Response(img, status=status.HTTP_200_OK)
